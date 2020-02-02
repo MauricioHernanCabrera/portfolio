@@ -1,0 +1,27 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "My prime Nuxt.js project",
+  "author": "Mauricio Hernan Cabrera",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "cross-env DEPLOY_ENV=GH_PAGES nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/pwa": "^3.0.0-0",
+    "animate.css": "^3.7.2",
+    "nuxt": "^2.0.0",
+    "scrollreveal": "^4.0.5"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.0",
+    "node-sass": "^4.13.1",
+    "pug": "^2.0.3",
+    "pug-plain-loader": "^1.0.0",
+    "sass-loader": "^8.0.2"
+  }
+}

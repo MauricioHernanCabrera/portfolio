@@ -1,0 +1,22 @@
+$grid-bp: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+@mixin media-query($size) {
+  @media screen and (min-width: map-get($grid-bp, $size)) {
+    @content;
+  }
+}
+
+$font1: "Playfair Display", sans-serif;
+$font2: "Open Sans", sans-serif;
+
+$colors: (
+  primary: #ffc576,
+  light: #ffffff,
+  section: #1f2235,
+  section-invert: #313552
+);
