@@ -9,7 +9,7 @@ const routerBase =
 
 const BASE_URL =
   process.env.DEPLOY_ENV === "GH_PAGES"
-    ? "https://mauriciohernancabrera.github.io/multimer"
+    ? "https://mauriciohernancabrera.github.io"
     : "http://localhost:3000";
 
 const page = {
@@ -17,7 +17,7 @@ const page = {
   description: "I'm Front-end Developer (React.js + Vue.js + Node.js)",
   safe: {
     img: `${BASE_URL}/safe_img.png`,
-    alt: "Logo de multimer"
+    alt: "Logo de Mauricio Hernan Cabrera"
   },
   favicon: `${BASE_URL}/logo.ico`,
   creator: "@hernanmc06",
