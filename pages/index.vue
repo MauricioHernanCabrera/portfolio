@@ -58,6 +58,15 @@ export default {
     return {
       portfolio: [
         {
+          name: "hela2",
+          image: {
+            url: "/portfolio/hela2.png",
+            alt: "Imagen de hela2"
+          },
+          link: "https://mauriciohernancabrera.github.io/hela2"
+        },
+
+        {
           name: "levelforward",
           image: {
             url: "/portfolio/levelforward.png",
@@ -330,7 +339,8 @@ export default {
       position: relative;
       overflow: hidden;
       cursor: pointer;
-      transform: scale(1.01);
+      /* background: white; */
+      /* transform: scale(1.01); */
 
       &:hover {
         .hover {
@@ -375,7 +385,7 @@ export default {
       }
 
       img {
-        object-fit: contain;
+        object-fit: cover;
         width: 100%;
         vertical-align: top;
         transition: 0.3s;
