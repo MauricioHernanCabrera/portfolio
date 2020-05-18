@@ -11,7 +11,7 @@
               span.d-block.animate-text Cabrera
             p.about-me.animate-text
               | Front-end Developer
-      
+
       .container-animation
         img(width="147" height="34" src="https://spaceraceit.com/wp/growth/wp-content/uploads/2019/06/Group-26.png" class="attachment-full size-full" alt="")
 
@@ -29,13 +29,13 @@
 
       .container-animation-6
         img(width="98" height="91" src="https://spaceraceit.com/wp/growth/wp-content/uploads/2019/06/Group-31.png" class="attachment-full size-full" alt="")
-    
+
       .container-animation-7
         img(width="147" height="34" src="https://spaceraceit.com/wp/growth/wp-content/uploads/2019/06/Group-26.png" class="attachment-full size-full" alt="")
-    
+
       .container-animation-8
         img(width="29" height="29" src="https://spaceraceit.com/wp/growth/wp-content/uploads/2019/06/Rectangle-9.png" class="attachment-full size-full" alt="")
-    
+
     section.portfolio
       .container
         .row.header
@@ -57,6 +57,24 @@ export default {
   data() {
     return {
       portfolio: [
+        {
+          name: "Fast Init",
+          image: {
+            url: "/portfolio/fast-init.png",
+            alt: "Imagen de Fast Init"
+          },
+          link: "https://mauriciohernancabrera.github.io/fast-init"
+        },
+
+        {
+          name: "geco",
+          image: {
+            url: "/portfolio/geco.png",
+            alt: "Imagen de geco"
+          },
+          link: "https://mauriciohernancabrera.github.io/hela2"
+        },
+
         {
           name: "hela2",
           image: {
