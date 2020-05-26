@@ -5,12 +5,12 @@
       .container
         .row
           .col-12
-            div.hello.animate-text.mb-3 Hello, I'm
+            div.hello.animate-text.mb-3 Hola, Soy
             h1.fullname.mb-4.mt-0
               span.d-block.animate-text Mauricio H.
               span.d-block.animate-text Cabrera
             p.about-me.animate-text
-              | Front-end Developer
+              | Full Stack Javascript Developer
 
       .container-animation
         img(width="147" height="34" src="https://spaceraceit.com/wp/growth/wp-content/uploads/2019/06/Group-26.png" class="attachment-full size-full" alt="")
@@ -40,8 +40,8 @@
       .container
         .row.header
           .col-12.px-3.px-sm-0
-            h3.animate-text.m-0.mb-1 MY WORK
-            p.animate-text.m-0.mb-5 Projects
+            h3.animate-text.m-0.mb-1 MI TRABAJO
+            p.animate-text.m-0.mb-5 Proyectos
 
       .portfolio-list
         article(v-for="item in portfolio" :key="item.name" class="portfolio-item")

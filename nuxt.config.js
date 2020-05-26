@@ -14,7 +14,8 @@ const BASE_URL =
 
 const page = {
   title: "Mauricio Hernan Cabrera",
-  description: "I'm Front-end Developer (React.js + Vue.js + Node.js)",
+  description:
+    "Soy Mauricio Hernan Cabrera Full Stack Javascript Developer (React.js + Vue.js + Node.js) autodidacta",
   safe: {
     img: `${BASE_URL}/safe_img.png`,
     alt: "Logo de Mauricio Hernan Cabrera"

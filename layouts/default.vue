@@ -7,7 +7,7 @@
             svg(width="24" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512")
               path(fill="white" :d="item.path")
 
-    
+
     nuxt
 </template>
 
@@ -51,16 +51,6 @@ export default {
         }
       ]
     };
-  },
-
-  mounted() {
-    this.$scrollReveal.reveal(".social-media li", {
-      beforeReveal: el => {
-        el.classList.add("animated");
-        el.classList.add("fadeInRight");
-      },
-      interval: 350
-    });
   }
 };
 </script>
