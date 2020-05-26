@@ -44,11 +44,13 @@
             p.animate-text.m-0.mb-5 Projects
 
       .portfolio-list
-        .row
-          article(v-for="item in portfolio" :key="item.name" class="portfolio-item col-12 col-sm-6 col-md-4 p-0")
-            .embed-responsive.embed-responsive-4by3
-              img.embed-responsive-item(:src="item.image.url" :alt="item.image.alt")
-            a(:href="item.link" target="_blank").hover
+        article(v-for="item in portfolio" :key="item.name" class="portfolio-item")
+          .embed-responsive.embed-responsive-4by3
+            img.embed-responsive-item(:src="item.image.url" :alt="item.image.alt")
+          a(:href="item.link" target="_blank").hover
+          .portfolio-overlay
+            .portfolio-name {{item.name}}
+            .portfolio-description(v-if="item.description && item.description.length >= 1") {{item.description}}
 
 </template>
 
@@ -58,7 +60,19 @@ export default {
     return {
       portfolio: [
         {
+          name: "RapiTienda",
+          description: "¡Tu tienda online para recibir pedidos por WhatsApp!",
+          image: {
+            url: "/portfolio/rapitienda.png",
+            alt: "Imagen de RapiTienda"
+          },
+          link: "http://rapitienda.net/"
+        },
+
+        {
           name: "Fast Init",
+          description:
+            "Abrí todos los programas necesitan para trabajar en un proyecto con un simple copy paste.",
           image: {
             url: "/portfolio/fast-init.png",
             alt: "Imagen de Fast Init"
@@ -67,7 +81,9 @@ export default {
         },
 
         {
-          name: "geco",
+          name: "Geco",
+          description:
+            "Plataforma que te ayuda a mejorar tu negocio, de forma sencilla, amigable y economica.",
           image: {
             url: "/portfolio/geco.png",
             alt: "Imagen de geco"
@@ -76,7 +92,8 @@ export default {
         },
 
         {
-          name: "hela2",
+          name: "Hela2",
+          description: "Arma tu orden de Mc postres rapidamente.",
           image: {
             url: "/portfolio/hela2.png",
             alt: "Imagen de hela2"
@@ -85,7 +102,7 @@ export default {
         },
 
         {
-          name: "levelforward",
+          name: "Level Forward",
           image: {
             url: "/portfolio/levelforward.png",
             alt: "Imagen de Level Forward"
@@ -95,6 +112,7 @@ export default {
 
         {
           name: "Livet",
+          description: "La forma más práctica de cuidar a tus mascotas.",
           image: {
             url: "/portfolio/livet.png",
             alt: "Imagen de livet"
@@ -104,6 +122,7 @@ export default {
 
         {
           name: "Opendoor",
+          description: "Toca y pasa, si asi de asombroso suena :)",
           image: {
             url: "/portfolio/opendoor-2.png",
             alt: "Imagen de opendoor"
@@ -113,6 +132,8 @@ export default {
 
         {
           name: "Devlights Jobs",
+          description:
+            "Estamos cambiando la forma en que funcionan las empresas del mundo. Nos encantaría que nos ayudes.",
           image: {
             url: "/portfolio/jobs-devlights.png",
             alt: "Imagen de devlights jobs"
@@ -122,6 +143,8 @@ export default {
 
         {
           name: "Devlights Works",
+          description:
+            "Somos una compañía dedicada a proveer soluciones tecnológicas.",
           image: {
             url: "/portfolio/works-devlights.png",
             alt: "Imagen de devlights works"
@@ -131,6 +154,8 @@ export default {
 
         {
           name: "Bard Time",
+          description:
+            "Aplicación web para controlar el tiempo con multiples temporizadores con ReactJS.",
           image: {
             url: "/portfolio/bardtime.png",
             alt: "Imagen de Bard Time en React"
@@ -140,6 +165,8 @@ export default {
 
         {
           name: "Multimer",
+          description:
+            "Aplicación web para controlar el tiempo con multiples temporizadores con VueJS.",
           image: {
             url: "/portfolio/multimer.png",
             alt: "Imagen de multimer"
@@ -149,6 +176,8 @@ export default {
 
         {
           name: "TimeToTime",
+          description:
+            "Aplicación web para controlar el tiempo con temporizador y cronometro con Angular.",
           image: {
             url: "/portfolio/timetotime.png",
             alt: "Imagen de TimeToTime"
@@ -158,6 +187,8 @@ export default {
 
         {
           name: "¿Cuándo rindo?",
+          description:
+            "Encontra el día que rendis en la UNNE, solo con un par de clicks.",
           image: {
             url: "/portfolio/cuandorindo.png",
             alt: "Imagen de ¿Cuándo rindo?"
@@ -167,6 +198,7 @@ export default {
 
         {
           name: "Platzi - Podcasts",
+          description: "La radio del futuro.",
           image: {
             url: "/portfolio/platzi_podcasts.png",
             alt: "Imagen de Platzi - Podcasts"
@@ -185,6 +217,8 @@ export default {
 
         {
           name: "Reiki en Corrientes",
+          description:
+            "Mejora tu estado espiritual, emocional y físico. Sesiones de reiki en Corrientes Argentina.",
           image: {
             url: "/portfolio/reikiencorrientes.png",
             alt: "Imagen de Reiki en Corrientes"
@@ -194,6 +228,7 @@ export default {
 
         {
           name: "LoL Spells",
+          description: "Gestiona el 100% de los hechizos de tus rivales.",
           image: {
             url: "/portfolio/lolspells.png",
             alt: "Imagen de LoL Spells"
@@ -203,6 +238,8 @@ export default {
 
         {
           name: "Piedra papel o tijera online",
+          description:
+            "Juga al piedra papel o tijera con tus amigos de manera online.",
           image: {
             url: "/portfolio/ppt.png",
             alt: "Imagen de Piedra papel o tijera online"
@@ -314,7 +351,7 @@ export default {
     line-height: 70px;
     letter-spacing: 1px;
 
-    @include media-query(md) {
+    @include breakpoint(md) {
       font-size: 100px;
       line-height: 100px;
     }
@@ -353,20 +390,57 @@ export default {
   }
 
   .portfolio-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4px;
+    @include breakpoint(sm) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    @include breakpoint(md) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    @include breakpoint(xl) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
     .portfolio-item {
       position: relative;
       overflow: hidden;
       cursor: pointer;
-      /* background: white; */
-      /* transform: scale(1.01); */
 
       &:hover {
-        .hover {
-          opacity: 1;
+        .portfolio-overlay {
+          bottom: 0;
         }
+      }
 
-        img {
-          transform: scale(1.1);
+      .portfolio-overlay {
+        transition: 0.3s;
+        position: absolute;
+        // bottom: -100%;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.45));
+        padding: 32px 20px 12px 20px;
+        z-index: 2;
+
+        .portfolio-name {
+          font-size: 14px;
+          font-weight: 700;
+          color: map-get($colors, light);
+          font-family: $font2;
+
+          @include breakpoint(xl) {
+            font-size: 18px;
+          }
+        }
+        .portfolio-description {
+          font-size: 12px;
+          color: map-get($colors, light);
+          font-family: $font2;
+          @include breakpoint(xl) {
+            font-size: 14px;
+          }
         }
       }
 
@@ -382,6 +456,7 @@ export default {
         display: flex;
         justify-content: center;
         align-items: flex-end;
+        z-index: 3;
 
         /* h3 {
           font-family: $font2;
